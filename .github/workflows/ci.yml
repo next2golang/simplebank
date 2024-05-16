@@ -17,7 +17,7 @@ jobs:
 
     services:
         postgres:
-          image: postgres:12
+          image: postgres:12-alpine
           env:
             POSTGRES_PASSWORD: secret
             POSTGRES_USER: root
