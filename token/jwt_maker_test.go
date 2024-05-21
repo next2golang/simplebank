@@ -1,7 +1,7 @@
 package token
 
 import (
-	"simplebank/db/util"
+	"simplebank/util"
 	"testing"
 	"time"
 
