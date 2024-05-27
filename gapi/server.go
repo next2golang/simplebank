@@ -9,7 +9,7 @@ import (
 )
 
 type Server struct {
-	pb.UnimplementedSimplebankServer
+	pb.UnimplementedSimpleBankServer
 	config     util.Config
 	store      db.Store
 	tokenMaker token.Maker
