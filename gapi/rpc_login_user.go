@@ -17,7 +17,7 @@ import (
 func (server *Server) LoginUser(ctx context.Context, req *pb.LoginUserRequest) (*pb.LoginUserResponse, error) {
 	violations := validateLoginUserRequest(req)
 	if violations != nil {
-		return nil, InvalidArgumentError(violations)
+		return nil, invalidArgumentError(violations)
 	}
 
 	user, err := server.store.GetUser(ctx, req.Username)

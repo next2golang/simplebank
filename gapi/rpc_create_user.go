@@ -16,7 +16,7 @@ import (
 func (server *Server) CreateUser(ctx context.Context, req *pb.CreateUserRequest) (*pb.CreateUserResponse, error) {
 	violations := validateCreateUserRequest(req)
 	if violations != nil {
-		return nil, InvalidArgumentError(violations)
+		return nil, invalidArgumentError(violations)
 	}
 
 	HashedPassword, err := util.HashPassword(req.GetPassword())
