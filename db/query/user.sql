@@ -11,3 +11,13 @@ INSERT INTO users (
 -- name: GetUser :one
 SELECT * from users
 WHERE username = $1 LIMIT 1;
+
+-- name: UpdateUser :one
+Update users
+SET
+  hashed_password = coalesce(sqlc.narg(hashed_password), hashed_password),
+  full_name = coalesce(sqlc.narg(full_name), full_name),
+  email=coalesce(sqlc.narg(email), email)
+WHERE
+  username = sqlc.arg(username)
+RETURNING *;
