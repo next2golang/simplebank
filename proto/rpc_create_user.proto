@@ -1,10 +1,10 @@
-syntax="proto3";
+syntax = "proto3";
 
 package pb;
 
 import "user.proto";
 
-option go_package="simplebank/pb";
+option go_package = "simplebank/pb";
 
 message CreateUserRequest {
   string username = 1;
